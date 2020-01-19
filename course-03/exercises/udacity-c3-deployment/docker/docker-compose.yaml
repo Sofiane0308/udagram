@@ -11,28 +11,28 @@ services:
   backend-user:
     image: sofianechikhbled/udacity-restapi-user
     environment:
-      POSTGRESS_USERNAME: $POSTGRESS_USERNAME
-      POSTGRESS_PASSWORD: $POSTGRESS_PASSWORD 
-      POSTGRESS_DB: $POSTGRESS_DB 
-      POSTGRESS_HOST: $POSTGRESS_HOST 
-      AWS_REGION: $AWS_REGION
-      AWS_PROFILE: $AWS_PROFILE 
-      AWS_BUCKET: $AWS_BUCKET
-      JWT_SECRET: $JWT_SECRET
+      POSTGRESS_USERNAME: postgres
+      POSTGRESS_PASSWORD:  lasauce2425
+      POSTGRESS_DB: udagramkb 
+      POSTGRESS_HOST: udagramkb.cq0kyil7ibhw.us-east-2.rds.amazonaws.com 
+      AWS_REGION: us-east-2
+      AWS_PROFILE: default
+      AWS_BUCKET: udagramkb
+      JWT_SECRET: helloworld
       URL: "http://localhost:8100"
   backend-feed:
     image: sofianechikhbled/udacity-restapi-feed
     volumes:
-      - $HOME/.aws:/root/.aws
+      - C:\Users\Sofiane\.aws:/root/.aws
     environment:
-      POSTGRESS_USERNAME: $POSTGRESS_USERNAME
-      POSTGRESS_PASSWORD: $POSTGRESS_PASSWORD  
-      POSTGRESS_DB: $POSTGRESS_DB  
-      POSTGRESS_HOST: $POSTGRESS_HOST
-      AWS_REGION: $AWS_REGION
-      AWS_PROFILE: $AWS_PROFILE  
-      AWS_BUCKET: $AWS_BUCKET
-      JWT_SECRET: $JWT_SECRET
+      POSTGRESS_USERNAME: postgres
+      POSTGRESS_PASSWORD: lasauce2425  
+      POSTGRESS_DB: udagramkb  
+      POSTGRESS_HOST: udagramkb.cq0kyil7ibhw.us-east-2.rds.amazonaws.com 
+      AWS_REGION: us-east-2
+      AWS_PROFILE: default 
+      AWS_BUCKET: udagramkb
+      JWT_SECRET: helloworld
       URL: "http://localhost:8100"
   frontend:
     image: sofianechikhbled/udacity-frontend:local
